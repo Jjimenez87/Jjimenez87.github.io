@@ -150,6 +150,11 @@
 		<p>Since the emergency-fix branch came directly from master, and no other changes had been made to master while we were working, Git sees this as a continuation of master. So it can "Fast-forward", just pointing both master and emergency-fix to the same commit.</p>
 		<p>Delete branch</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> branch -d emergency-fix</code>
+		<p>git remote add origin URL specifies that you are adding a remote repository, with the specified URL, as an origin to your local Git repo.<p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> remote add origin git@github.com:Jjimenez87/knowlege-garage-repo.git</code>
+		<p>Use git push to send files to remote repo.</p>
+		<p>Push our master branch to the origin url, and set it as the default remote branch</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> push --set-upstream origin master</code>
 		
 		<p><a href="java.html">Java</a></p>
 		<p><a href="spring.html">Spring</a></p>
