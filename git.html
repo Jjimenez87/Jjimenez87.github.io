@@ -91,7 +91,15 @@
 		<p>When the work is complete, a branch can be merged with the main project.</p>
 		<p>You can even switch between branches and work on different projects without them interfering with each other.</p>
 		<p>Branching in Git is very lightweight and fast!</p>
-
+		<h2>Pulling to Keep up-to-date with Changes</h2>
+		<p>When working as a team on a project, it is important that everyone stays up to date.</p>
+		<p>Any time you start working on a project, you should get the most recent changes to your local copy.</p>
+		<p>With Git, you can do that with <strong style="color: crimson">pull</strong>.</p>
+		<p><strong style="color: crimson">pull</strong> is a combination of 2 different commands:</p>
+		<ul>
+			<li><strong style="color: crimson">fetch</strong></li>
+			<li><strong style="color: crimson">merge</strong></li>
+		</ul>
 		
 		<h3>Git commands:</h3>
 		<p>Check if Git is properly installed:</p>
@@ -127,6 +135,7 @@
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> commit -a -m <strong style="color: #2f9c0a">"Updated index.html with a new line"</strong></code>
 		<p>To view the history/log of commits for a repository</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> log</code>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> log origin/master</code>
 		<h2>Git Help</h2>
 		<p>If you are having trouble remembering commands or options for commands, you can use Git <strong style="color: crimson">help</strong>.</p>
 		<p>There are a couple of different ways you can use the <strong style="color: crimson">help</strong> command in command line:</p>
@@ -155,6 +164,16 @@
 		<p>Use git push to send files to remote repo.</p>
 		<p>Push our master branch to the origin url, and set it as the default remote branch</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> push --set-upstream origin master</code>
+		<h2>Git Fetch</h2>
+		<p>fetch gets all the change history of a tracked branch/repo.</p>
+		<p>So, on your local Git, fetch updates to see what has changed on GitHub</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> fetch origin</code>
+		<p>Verify by showing the differences between our local master and origin/master</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git diff</strong> origin/master</code>
+		<h2>Git Merge</h2>
+		<p>merge combines the current branch, with a specified branch.</p>
+		<p>We have confirmed that the updates are as expected, and we can merge our current branch (master) with origin/master:</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git </strong> merge origin/master</code>
 		
 		<p><a href="java.html">Java</a></p>
 		<p><a href="spring.html">Spring</a></p>
