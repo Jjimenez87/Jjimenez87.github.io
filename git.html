@@ -84,6 +84,14 @@
 		<p>Adding commits keep track of our progress and changes as we work. Git considers each <strong style="color: crimson">commit</strong> change point or "save point". It is a point in the project you can go back to if you find a bug, or want to make a change.</p>
 		<h2>Git Commit without Stage</h2>
 		<p>Sometimes, when you make small changes, using the staging environment seems like a waste of time. It is possible to commit changes directly, skipping the staging environment (without using the git add command). The -a option will automatically stage every changed, already tracked file.</p>
+		<h2>Working with Git Branches</h2>
+		<p>In Git, a branch is a new/separate version of the main repository.</p>
+		<p>Branches allow you to work on different parts of a project without impacting the main branch.</p>
+		<p>We are working in our local repository, and we do not want to disturb or possibly wreck the main project.</p>
+		<p>When the work is complete, a branch can be merged with the main project.</p>
+		<p>You can even switch between branches and work on different projects without them interfering with each other.</p>
+		<p>Branching in Git is very lightweight and fast!</p>
+
 		
 		<h3>Git commands:</h3>
 		<p>Check if Git is properly installed:</p>
@@ -102,11 +110,10 @@
 		<p>Using <strong style="color: crimson">--all</strong> instead of individual filenames will stage all changes (new, modified, and deleted) files.</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git add</strong> --all</code><br>
 		<p><strong>Note:</strong> The shorthand command for git add --all is git add -A</p>
-		
 		<p>The <strong style="color: crimson">commit</strong> command performs a commit, and the <strong style="color: crimson">-m "message"</strong> adds a message.</p>
 		<p>When we commit, we should always include a message.</p>
 		<p>By adding clear messages to each commit, it is easy for yourself (and others) to see what has changed and when.</p>
-		<p>The Staging Environment has been committed to our repo, with the message: "First release of Hello World!"</p>
+		<p>The Staging Environment has been committed to our current repository, with the message: "First release of Hello World!"</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> commit -m <strong style="color: #2f9c0a">"First release of Hello World!"</strong></code><br>
 		<p>To check the status of our repository, to see the changes in a more compact way we will use the --short option:</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> status --short</code>
@@ -118,7 +125,31 @@
 		<p>Commit files directly skipping the Staging Environment (not generally recommended)</p>
 		<p>Skipping the stage step can sometimes make you include unwanted changes.</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> commit -a -m <strong style="color: #2f9c0a">"Updated index.html with a new line"</strong></code>
-		
+		<p>To view the history/log of commits for a repository</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> log</code>
+		<h2>Git Help</h2>
+		<p>If you are having trouble remembering commands or options for commands, you can use Git <strong style="color: crimson">help</strong>.</p>
+		<p>There are a couple of different ways you can use the <strong style="color: crimson">help</strong> command in command line:</p>
+		<ul>
+			<li><strong style="color: crimson">git command -help</strong> -  Any time you need some help remembering  all the available options for the specific command</li>
+			<li><strong>Note:</strong> You can also use <strong style="color: crimson">--help</strong> instead of <strong style="color: crimson">-help</strong> to open the relevant Git manual page</li>
+			<li><strong style="color: crimson">git help --all</strong> -  To list all possible commands, Warning: This will display a very long list of commands</li>
+		</ul>
+		<p>Create a new <strong style="color: crimson">branch</strong></p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> branch hello-world-images</code>
+		<p>Confirm that we have created a new branch (list branches)</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> branch</code>
+		<p><strong style="color: crimson">checkout</strong> is the command used to check out a <strong style="color: crimson">branch</strong>. Moving us <strong>from</strong> the current branch, <strong>to</strong> the one specified at the end of the command</p>
+		<p>Now we have moved our current workspace from the master branch, to the new branch</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> checkout hello-world-images</code>
+		<p><strong>Note:</strong> Using the <strong style="color: crimson">-b</strong> option on checkout will create a new branch, and move to it, if it does not exist</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> checkout -b emergency-fix</code>
+		<h2>Merge Branches</h2>
+		<p>merge the current branch (master) with emergency-fix</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> merge emergency-fix</code>
+		<p>Since the emergency-fix branch came directly from master, and no other changes had been made to master while we were working, Git sees this as a continuation of master. So it can "Fast-forward", just pointing both master and emergency-fix to the same commit.</p>
+		<p>Delete branch</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> branch -d emergency-fix</code>
 		
 		<p><a href="java.html">Java</a></p>
 		<p><a href="spring.html">Spring</a></p>
