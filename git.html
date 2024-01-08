@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>GIT</title>
+		<link rel="stylesheet" href="bluestyle.css">
+	</head>
+	<body>
+		<h1>Git Tutorial</h1>
+		<h2>What is Git?</h2>
+		<p>Git is a popular version control system. It was created by Linus Torvalds in 2005, and has been maintained by Junio Hamano since then.</p>
+		<p>It is used for:</p>
+		<ul>
+			<li>Git helps you keep track of code changes.</li>
+			<li>Tracking who made changes</li>
+			<li>Git is used to collaborate on code.</li>
+		</ul>
+		<h2>What does Git do?</h2>
+		<ul>
+			<li>Manage projects with <strong>Repositories</strong></li>
+			<li><strong>Clone</strong> a project to work on a local copy</li>
+			<li>Control and track changes with <strong>Staging</strong> and <strong>Committing</strong></li>
+			<li><strong>Branch</strong> and <strong>Merge</strong> to allow for work on different parts and versions of a project</li>
+			<li><strong>Pull</strong> the latest version of the project to a local copy</li>
+			<li><strong>Push</strong> local updates to the main project</li>
+		</ul>
+		<h2>Working with Git</h2>
+		<ul>
+			<li>Initialize Git on a folder, making it a Repository</li>
+			<li>Git now knows that it should watch the folder you initiated it on and creates a hidden folder to keep track of changes in that folder</li>
+			<li>When a file is changed, added or deleted, it is considered modified</li>
+			<li>You select the modified files you want to Stage</li>
+			<li>The Staged files are Committed, which prompts Git to store a permanent snapshot of the files</li>
+			<li>Git allows you to see the full history of every commit.</li>
+			<li>You can revert back to any previous commit.</li>
+			<li>Git does not store a separate copy of every file in every commit, but keeps track of changes made in each commit!</li>
+		</ul>
+		<h2>Why Git?</h2>
+		<ul>
+			<li>Over 70% of developers use Git!</li>
+			<li>Developers can work together from anywhere in the world.</li>
+			<li>Developers can see the full history of the project.</li>
+			<li>Developers can revert to earlier versions of a project.</li>
+		</ul>
+		<h2>What is GitHub?</h2>
+		<ul>
+			<li>GitHub is a remote repository platform.</li>
+			<li>Git and GitHub are different things.</li>
+			<li>GitHub makes tools that use Git.</li>
+			<li>GitHub is the largest host of source code in the world, and has been owned by Microsoft since 2018.</li>
+		</ul>
+		<h2>Using Git with Command Line</h2>
+		<p>To start using Git, we are first going to open up our Command shell.</p>
+		<p>For Windows, you can use <strong>Git Bash</strong>, which comes included in Git for Windows. For Mac and Linux you can use the built-in terminal.</p>
+		<h2>Configure Git</h2>
+		<p>Now let Git know who you are. This is important for version control systems, as each Git commit uses this information:</p>
+		<p>I think is better to use SSH to link gitHub with the local git, the commits will be done with the gitHub user and not mixed with local user commits.</p>
+		<p><strong>Note:</strong> Use global to set the username and e-mail for every repository on your computer.</p>
+		<p>If you want to set the username/e-mail for just the current repo, you can remove global</p>
+		<code>[user@localhost]$ git config --global user.name "w3schools-test"</code><br>
+		<code>[user@localhost]$ git config --global user.email "test@w3schools.com"</code>
+		<h2>Initialize Git</h2>
+		<p>If you already have a folder/directory you would like to use for Git:</p>
+		<p>Navigate to it in command line, or open it in your file explorer, right-click and select "Git Bash here"</p>
+		<p>Once you have navigated to the correct folder, you can initialize Git on that folder with the command <strong style="color: #2f9c0a">git</strong> init.</p>
+		<h2>Git Adding New Files</h2>
+		<p>You just created your first local Git repo with the command git init. But it is empty.</p>
+		<p>So let's add some files, or create a new file using your favourite text editor.</p>
+		
+		<p>After add files to the git repo folder, now Git is <strong>aware</strong> of the file, but has not <strong>added</strong> it to our repository!</p>
+		<p>Files in your Git repository folder can be in one of 2 states:</p>
+		<ul>
+			<li>Tracked - files that Git knows about and are added to the repository</li>
+			<li>Untracked - files that are in your working directory, but not added to the repository</li>
+		</ul>
+		<p>When you first add files to an empty repository, they are all untracked. To get Git to track them, you need to stage them, or add them to the staging environment.</p>
+		
+		<h2>Git Staging Environment</h2>
+		<p>One of the core functions of Git is the concepts of the Staging Environment, and the Commit.</p>
+		<p>As you are working, you may be adding, editing and removing files. But whenever you hit a milestone or finish a part of the work, you should add the files to a Staging Environment.</p>
+		<p>Staged files are files that are ready to be committed to the repository you are working on. You will learn more about commit shortly.</p>
+		<p><strong style="color: crimson">README.md</strong> file that describes the repository (recommended for all repositories):
+		<h2>Git Commit</h2>
+		<p>Since we have finished our work, we are ready to move from <strong style="color: crimson">stage</strong> to <strong style="color: crimson">commit</strong> for our repo.</p>
+		<p>Adding commits keep track of our progress and changes as we work. Git considers each <strong style="color: crimson">commit</strong> change point or "save point". It is a point in the project you can go back to if you find a bug, or want to make a change.</p>
+		<h2>Git Commit without Stage</h2>
+		<p>Sometimes, when you make small changes, using the staging environment seems like a waste of time. It is possible to commit changes directly, skipping the staging environment. The -a option will automatically stage every changed, already tracked file.</p>
+		
+		<h3>Git commands:</h3>
+		<p>Check if Git is properly installed:</p>
+		<code>[user@localhost]$ git --version</code><br>
+		<code>git version 2.35.1.windows.2</code>
+		<p>Initialize/Create a Git repository:</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> init</code><br>
+		<code>Initialized empty Git repository in /Users/user/myproject/.git/</code>
+		<p><strong style="color: crimson">ls</strong> will list the files in the directory.</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> status</code><br>
+		<p>Add a file to the Staging Environment:</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git add</strong> index.html</code><br>
+		<p>Stage more than one file at a time:</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git add</strong> .</code><br>
+		<p>Add all files in the current directory to the Staging Environment:</p>
+		<p>Using <strong style="color: crimson">--all</strong> instead of individual filenames will stage all changes (new, modified, and deleted) files.</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git add</strong> --all</code><br>
+		<p><strong>Note:</strong> The shorthand command for git add --all is git add -A</p>
+		
+		<p>The <strong style="color: crimson">commit</strong> command performs a commit, and the <strong style="color: crimson">-m "message"</strong> adds a message.</p>
+		<p>When we commit, we should always include a message.</p>
+		<p>By adding clear messages to each commit, it is easy for yourself (and others) to see what has changed and when.</p>
+		<p>The Staging Environment has been committed to our repo, with the message: "First release of Hello World!"</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> commit -m <strong style="color: #2f9c0a">"First release of Hello World!"</strong>
+		
+		<p><a href="java.html">Java</a></p>
+		<p><a href="spring.html">Spring</a></p>
+		<p><a href="docker.html">Docker</a></p>
+		<p><a href="angular.html">Angular</a></p>
+		<p><a href="aws.html">AWS</a></p>
+		<p><a href="devops.html">DevOps</a></p>
+		<p><a href="jenkins.html">Jenkins</a></p>
+		<p><a href="terraform.html">Terraform</a></p>
+		<p><a href="sql.html">SQL</a></p>
+		<p><a href="index.html">Home</a></p>
+	</body>
+</html>
