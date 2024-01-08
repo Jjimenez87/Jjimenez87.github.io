@@ -83,7 +83,7 @@
 		<p>Since we have finished our work, we are ready to move from <strong style="color: crimson">stage</strong> to <strong style="color: crimson">commit</strong> for our repo.</p>
 		<p>Adding commits keep track of our progress and changes as we work. Git considers each <strong style="color: crimson">commit</strong> change point or "save point". It is a point in the project you can go back to if you find a bug, or want to make a change.</p>
 		<h2>Git Commit without Stage</h2>
-		<p>Sometimes, when you make small changes, using the staging environment seems like a waste of time. It is possible to commit changes directly, skipping the staging environment. The -a option will automatically stage every changed, already tracked file.</p>
+		<p>Sometimes, when you make small changes, using the staging environment seems like a waste of time. It is possible to commit changes directly, skipping the staging environment (without using the git add command). The -a option will automatically stage every changed, already tracked file.</p>
 		
 		<h3>Git commands:</h3>
 		<p>Check if Git is properly installed:</p>
@@ -107,7 +107,18 @@
 		<p>When we commit, we should always include a message.</p>
 		<p>By adding clear messages to each commit, it is easy for yourself (and others) to see what has changed and when.</p>
 		<p>The Staging Environment has been committed to our repo, with the message: "First release of Hello World!"</p>
-		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> commit -m <strong style="color: #2f9c0a">"First release of Hello World!"</strong>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> commit -m <strong style="color: #2f9c0a">"First release of Hello World!"</strong></code><br>
+		<p>To check the status of our repository, to see the changes in a more compact way we will use the --short option:</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> status --short</code>
+		<p><strong>Note:</strong> Short status flags are:</p>
+		<p>?? - Untracked files</p>
+		<p>A - Files added to stage</p>
+		<p>M - Modified files</p>
+		<p>D - Deleted files</p>
+		<p>Commit files directly skipping the Staging Environment (not generally recommended)</p>
+		<p>Skipping the stage step can sometimes make you include unwanted changes.</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> commit -a -m <strong style="color: #2f9c0a">"Updated index.html with a new line"</strong></code>
+		
 		
 		<p><a href="java.html">Java</a></p>
 		<p><a href="spring.html">Spring</a></p>
