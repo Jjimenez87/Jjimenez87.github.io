@@ -100,6 +100,10 @@
 			<li><strong style="color: crimson">fetch</strong></li>
 			<li><strong style="color: crimson">merge</strong></li>
 		</ul>
+		<p>It is used to pull all changes from a remote repository into the branch you are working on.</p>
+		<p>That is how you keep your local Git up to date from a remote repository (using fetch/merge or pull).</p>
+		<h2>Push Changes to GitHub</h2>
+		
 		
 		<h3>Git commands:</h3>
 		<p>Check if Git is properly installed:</p>
@@ -164,16 +168,21 @@
 		<p>Use git push to send files to remote repo.</p>
 		<p>Push our master branch to the origin url, and set it as the default remote branch</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> push --set-upstream origin master</code>
+		<p>Push changes to remote origin</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> push origin</code>
 		<h2>Git Fetch</h2>
 		<p>fetch gets all the change history of a tracked branch/repo.</p>
 		<p>So, on your local Git, fetch updates to see what has changed on GitHub</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git</strong> fetch origin</code>
 		<p>Verify by showing the differences between our local master and origin/master</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git diff</strong> origin/master</code>
-		<h2>Git Merge</h2>
+		<h2>Git Merge used after fetch</h2>
 		<p>merge combines the current branch, with a specified branch.</p>
 		<p>We have confirmed that the updates are as expected, and we can merge our current branch (master) with origin/master:</p>
 		<code>[user@localhost]$ <strong style="color: #2f9c0a">git </strong> merge origin/master</code>
+		<p>But what if you just want to update your local repository, without going through all those steps (fetch and merge)?
+		<p>Use pull to update our local Git:</p>
+		<code>[user@localhost]$ <strong style="color: #2f9c0a">git </strong> pull origin</code>
 		
 		<p><a href="java.html">Java</a></p>
 		<p><a href="spring.html">Spring</a></p>
